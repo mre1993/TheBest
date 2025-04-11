@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ثبت نام</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding-right: 20px; /* Add space on the right */
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            width: 300px;
+            max-width: 100%;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px; /* Add space between inputs */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box; /* Prevents padding from affecting width */
+        }
+        input[type="submit"] {
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        input[type="submit"]:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>ثبت نام</h2>
+        <form method="post">
+            {% csrf_token %}
+            <input type="text" name="phone_number" placeholder="شماره تلفن" required>
+            <input type="email" name="email" placeholder="ایمیل" required>
+            <input type="text" name="about_me" placeholder="درباره خودم" required>
+            <input type="text" name="first_name" placeholder="نام" required>
+            <input type="text" name="last_name" placeholder="نام خانوادگی" required>
+            <input type="password" name="password1" placeholder="رمز عبور" required>
+            <input type="password" name="password2" placeholder="تأیید رمز عبور" required>
+            <input type="submit" value="ثبت نام">
+        </form>
+    </div>
+</body>
+</html>
